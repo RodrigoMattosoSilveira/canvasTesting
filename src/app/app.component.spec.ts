@@ -41,7 +41,7 @@ describe('AppComponent', () => {
       expect(compiled.querySelector('h1').textContent).toContain('Welcome to canvasTesting!');
    });
    describe('Canvas', () => {
-      it('succeed drawing with original drawing', () => {
+      it('detect a the same fingerprint without a canvas change', () => {
          // draw canvas image
          component.ngAfterViewInit();
 
@@ -50,7 +50,7 @@ describe('AppComponent', () => {
          let figerPrint = Md5.hashStr(imageData.data.toString());
          expect(figerPrint).toBe(MYCANVAS_FINGERPRINT);
       });
-      it('fail drawing with with additional drawing elements', () => {
+      it('detect a fingerprint change with a minor canvas change', () => {
          // draw canvas image
          component.ngAfterViewInit();
 
