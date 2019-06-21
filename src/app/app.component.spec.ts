@@ -50,5 +50,17 @@ describe('AppComponent', () => {
          let figerPrint = Md5.hashStr(imageData.data.toString());
          expect(figerPrint).toBe(MYCANVAS_FINGERPRINT);
       });
+      it('fail drawing with with additional drawing elements', () => {
+         // draw canvas image
+         component.ngAfterViewInit();
+
+         // draw a dot in the middle of the canvas
+         canvasCtx.fillRect(100,50,1,1); // fill in the pixel at (10,10)
+
+         // compute fingerprint and compare ... it should fail
+         let imageData = canvasCtx.getImageData(0, 0, canvasEl.width, canvasEl.height)
+         let figerPrint = Md5.hashStr(imageData.data.toString());
+         expect(figerPrint).not.toBe(MYCANVAS_FINGERPRINT);
+      });
    });
 });
