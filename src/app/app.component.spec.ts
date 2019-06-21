@@ -7,7 +7,7 @@ describe('AppComponent', () => {
    let fixture: ComponentFixture<AppComponent>;
    let canvasEl: HTMLCanvasElement;
    let canvasCtx: CanvasRenderingContext2D;
-   const MYCANVAS_FINGERPRINT = "";
+   const MYCANVAS_FINGERPRINT = "bebce8b08f55921c935093d2d3e5f508";
 
    beforeEach(async(() => {
       TestBed.configureTestingModule({
