@@ -1,5 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { Md5 } from 'ts-md5/dist/md5';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
